@@ -85,19 +85,3 @@ curl http://localhost:8000/generate \
   -H "Content-Type: application/json" \
   -d '{"system":"You are a spam classifier. Answer with SPAM or HAM and one short reason.","prompt":"Message: CONGRATULATIONS!!! You won a $1000 gift card. Click http://bit.ly/xx now.\nVerdict:"}'
 ```
-
-## Что сделано
-
-- контейнер сделан на `ubuntu:22.04`
-- внутри есть `python3`
-- внутри установлен `Ollama`
-- модель `qwen2.5:0.5b` загружается в образ
-- есть быстрый тест обращения к `Ollama`
-- внутри работает `FastAPI`
-- у сервиса один endpoint `POST /generate`
-- порт FastAPI проброшен наружу
-- порт Ollama тоже проброшен наружу
-- есть внешний тест через `curl`
-- есть внешний тест через Python
-- есть простые unit-тесты
-- у функций есть docstring
